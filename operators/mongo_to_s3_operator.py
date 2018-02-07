@@ -6,7 +6,7 @@ from airflow.hooks.S3_hook import S3Hook
 from airflow.models import BaseOperator
 
 
-class MongoToS3BaseOperator(BaseOperator):
+class MongoToS3Operator(BaseOperator):
     """
     Mongo -> S3
     :param mongo_conn_id:           The source mongo connection id.

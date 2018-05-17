@@ -37,7 +37,7 @@ class MongoToS3Operator(BaseOperator):
                  s3_bucket,
                  s3_key,
                  *args, **kwargs):
-        super(MongoToS3BaseOperator, self).__init__(*args, **kwargs)
+        super(MongoToS3Operator, self).__init__(*args, **kwargs)
         # Conn Ids
         self.mongo_conn_id = mongo_conn_id
         self.s3_conn_id = s3_conn_id
@@ -82,7 +82,7 @@ class MongoToS3Operator(BaseOperator):
         """
         Processes pyMongo cursor and returns single array with each element being
                 a JSON serializable dictionary
-        MongoToS3BaseOperator.transform() assumes no processing is needed
+        MongoToS3Operator.transform() assumes no processing is needed
         ie. docs is a pyMongo cursor of documents and cursor just needs to be
             converted into an array.
         """
